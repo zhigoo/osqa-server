@@ -1,0 +1,758 @@
+/usr/lib/python2.7/dist-packages/django/core/handlers/base.py TIME: 2012-07-31 17:40:43,399 MSG: base.py:handle_uncaught_exception:209 Internal Server Error: /questions/ask/
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/osqa/osqa-server/forum/modules/decorators.py", line 99, in decorated
+    return decoratable(*args, **kwargs)
+  File "/home/osqa/osqa-server/forum/modules/decorators.py", line 59, in __call__
+    res = self._callable(*args, **kwargs)
+  File "/home/osqa/osqa-server/forum/modules/decorators.py", line 34, in <lambda>
+    self._callable = lambda *args, **kwargs: fn(origin, *args, **kwargs)
+  File "/home/osqa/osqa-server/forum_modules/akismet/startup.py", line 45, in wrapper
+    if api.comment_check(comment, data):
+  File "/home/osqa/osqa-server/forum_modules/akismet/lib/akismet.py", line 320, in comment_check
+    resp = self._safeRequest(url, urlencode(data), headers)
+  File "/home/osqa/osqa-server/forum_modules/akismet/lib/akismet.py", line 137, in _safeRequest
+    raise AkismetError(str(e))
+AkismetError: <urlopen error [Errno -2] Name or service not known>
+/home/osqa/osqa-server/forum/views/meta.py TIME: 2012-07-31 17:40:43,405 MSG: meta.py:error_handler:200 
+        error executing request:
+        PATH: /questions/ask/
+        USER: <anonymous>
+        METHOD: POST
+        POST PARAMETERS:
+        		text: question, you will be redirected to the login/signup page. Your question will be saved in the current session and will be published after you login with your existing account, or signup for a new account.
+		tags: 
+		title: You are welcome to start submitting your ques
+
+        GET PARAMETERS:
+        None
+        HTTP HEADERS:
+        		mod_wsgi.listener_port: 80
+		HTTP_COOKIE: sessionid=2250a0e6527518ef537cc148eb6ebc3e; Hm_lvt_069ed721d8a08e8f4402485c08b26ef6=1343724302226,1343726512871; __utma=88098187.27869800.1343724303.1343724303.1343726513.2; __utmz=88098187.1343724303.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); Hm_lvt_b56da2db038ef09edc1ad86641d19efc=1343724487268; Hm_lpvt_069ed721d8a08e8f4402485c08b26ef6=1343727606417; __utmb=88098187.22.9.1343727606609; __utmc=88098187
+		mod_wsgi.listener_host: 
+		SERVER_SOFTWARE: Apache/2.2.22 (Ubuntu)
+		SCRIPT_NAME: 
+		mod_wsgi.handler_script: 
+		SERVER_SIGNATURE: <address>Apache/2.2.22 (Ubuntu) Server at ask.12stu.com Port 80</address>
+
+		REQUEST_METHOD: POST
+		PATH_INFO: /questions/ask/
+		SERVER_PROTOCOL: HTTP/1.1
+		QUERY_STRING: 
+		CONTENT_LENGTH: 273
+		HTTP_USER_AGENT: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:14.0) Gecko/20100101 Firefox/14.0.1
+		HTTP_CONNECTION: keep-alive
+		HTTP_REFERER: http://ask.12stu.com/questions/ask/
+		SERVER_NAME: ask.12stu.com
+		REMOTE_ADDR: 115.182.70.70
+		mod_wsgi.request_handler: wsgi-script
+		wsgi.url_scheme: http
+		PATH_TRANSLATED: /home/osqa/osqa-server/osqa.wsgi/questions/ask/
+		SERVER_PORT: 80
+		wsgi.multiprocess: False
+		mod_wsgi.input_chunked: 0
+		SERVER_ADDR: 113.11.199.172
+		DOCUMENT_ROOT: /home/osqa/osqa-server
+		mod_wsgi.process_group: OSQA
+		SCRIPT_FILENAME: /home/osqa/osqa-server/osqa.wsgi
+		SERVER_ADMIN: forum@example.com
+		wsgi.input: <mod_wsgi.Input object at 0x7f01c5878d30>
+		HTTP_HOST: ask.12stu.com
+		wsgi.multithread: True
+		mod_wsgi.callable_object: application
+		REQUEST_URI: /questions/ask/
+		HTTP_ACCEPT: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+		wsgi.version: (1, 1)
+		GATEWAY_INTERFACE: CGI/1.1
+		wsgi.run_once: False
+		wsgi.errors: <mod_wsgi.Log object at 0x7f01c58782b0>
+		REMOTE_PORT: 61446
+		HTTP_ACCEPT_LANGUAGE: en-us,en;q=0.5
+		mod_wsgi.version: (3, 3)
+		CONTENT_TYPE: application/x-www-form-urlencoded
+		mod_wsgi.application_group: ask.12stu.com|
+		mod_wsgi.script_reloading: 1
+		wsgi.file_wrapper: <built-in method file_wrapper of mod_wsgi.Adapter object at 0x7f01c5872300>
+		HTTP_ACCEPT_ENCODING: gzip, deflate
+
+        COOKIES:
+        		__utmz: 88098187.1343724303.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)
+		Hm_lvt_069ed721d8a08e8f4402485c08b26ef6: 1343724302226,1343726512871
+		Hm_lvt_b56da2db038ef09edc1ad86641d19efc: 1343724487268
+		sessionid: 2250a0e6527518ef537cc148eb6ebc3e
+		Hm_lpvt_069ed721d8a08e8f4402485c08b26ef6: 1343727606417
+		__utma: 88098187.27869800.1343724303.1343724303.1343726513.2
+		__utmb: 88098187.22.9.1343727606609
+		__utmc: 88098187
+
+        EXCEPTION INFO:
+        		Traceback (most recent call last):
+		  File "/usr/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+		    response = callback(request, *callback_args, **callback_kwargs)
+		  File "/home/osqa/osqa-server/forum/modules/decorators.py", line 99, in decorated
+		    return decoratable(*args, **kwargs)
+		  File "/home/osqa/osqa-server/forum/modules/decorators.py", line 59, in __call__
+		    res = self._callable(*args, **kwargs)
+		  File "/home/osqa/osqa-server/forum/modules/decorators.py", line 34, in <lambda>
+		    self._callable = lambda *args, **kwargs: fn(origin, *args, **kwargs)
+		  File "/home/osqa/osqa-server/forum_modules/akismet/startup.py", line 45, in wrapper
+		    if api.comment_check(comment, data):
+		  File "/home/osqa/osqa-server/forum_modules/akismet/lib/akismet.py", line 320, in comment_check
+		    resp = self._safeRequest(url, urlencode(data), headers)
+		  File "/home/osqa/osqa-server/forum_modules/akismet/lib/akismet.py", line 137, in _safeRequest
+		    raise AkismetError(str(e))
+		AkismetError: <urlopen error [Errno -2] Name or service not known>
+		
+
+        
+/usr/lib/python2.7/dist-packages/django/core/handlers/base.py TIME: 2012-07-31 17:54:53,958 MSG: base.py:handle_uncaught_exception:209 Internal Server Error: /questions/ask/
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/osqa/osqa-server/forum/modules/decorators.py", line 99, in decorated
+    return decoratable(*args, **kwargs)
+  File "/home/osqa/osqa-server/forum/modules/decorators.py", line 59, in __call__
+    res = self._callable(*args, **kwargs)
+  File "/home/osqa/osqa-server/forum/modules/decorators.py", line 34, in <lambda>
+    self._callable = lambda *args, **kwargs: fn(origin, *args, **kwargs)
+  File "/home/osqa/osqa-server/forum_modules/akismet/startup.py", line 45, in wrapper
+    if api.comment_check(comment, data):
+  File "/home/osqa/osqa-server/forum_modules/akismet/lib/akismet.py", line 320, in comment_check
+    resp = self._safeRequest(url, urlencode(data), headers)
+  File "/home/osqa/osqa-server/forum_modules/akismet/lib/akismet.py", line 137, in _safeRequest
+    raise AkismetError(str(e))
+AkismetError: <urlopen error [Errno -2] Name or service not known>
+/home/osqa/osqa-server/forum/views/meta.py TIME: 2012-07-31 17:54:53,965 MSG: meta.py:error_handler:200 
+        error executing request:
+        PATH: /questions/ask/
+        USER: <anonymous>
+        METHOD: POST
+        POST PARAMETERS:
+        		text: relevant to the 你问我答--考汇网: 提出你的问题, 得到你的答案 community
+		tags: 字段
+		title: relevant to the 你问我答--考汇网: 提出你的问题, 得到你的答案 community
+
+        GET PARAMETERS:
+        None
+        HTTP HEADERS:
+        		mod_wsgi.listener_port: 80
+		HTTP_COOKIE: sessionid=2250a0e6527518ef537cc148eb6ebc3e; Hm_lvt_069ed721d8a08e8f4402485c08b26ef6=1343724302226,1343726512871; __utma=88098187.27869800.1343724303.1343724303.1343726513.2; __utmz=88098187.1343724303.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); Hm_lvt_b56da2db038ef09edc1ad86641d19efc=1343724487268; Hm_lpvt_069ed721d8a08e8f4402485c08b26ef6=1343728450203; __utmb=88098187.32.9.1343728450396; __utmc=88098187
+		mod_wsgi.listener_host: 
+		SERVER_SOFTWARE: Apache/2.2.22 (Ubuntu)
+		SCRIPT_NAME: 
+		mod_wsgi.handler_script: 
+		SERVER_SIGNATURE: <address>Apache/2.2.22 (Ubuntu) Server at ask.12stu.com Port 80</address>
+
+		REQUEST_METHOD: POST
+		PATH_INFO: /questions/ask/
+		SERVER_PROTOCOL: HTTP/1.1
+		QUERY_STRING: 
+		CONTENT_LENGTH: 450
+		HTTP_USER_AGENT: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:14.0) Gecko/20100101 Firefox/14.0.1
+		HTTP_CONNECTION: keep-alive
+		HTTP_REFERER: http://ask.12stu.com/questions/ask/
+		SERVER_NAME: ask.12stu.com
+		REMOTE_ADDR: 115.182.70.70
+		mod_wsgi.request_handler: wsgi-script
+		wsgi.url_scheme: http
+		PATH_TRANSLATED: /home/osqa/osqa-server/osqa.wsgi/questions/ask/
+		SERVER_PORT: 80
+		wsgi.multiprocess: False
+		mod_wsgi.input_chunked: 0
+		SERVER_ADDR: 113.11.199.172
+		DOCUMENT_ROOT: /home/osqa/osqa-server
+		mod_wsgi.process_group: OSQA
+		SCRIPT_FILENAME: /home/osqa/osqa-server/osqa.wsgi
+		SERVER_ADMIN: forum@example.com
+		wsgi.input: <mod_wsgi.Input object at 0x7f7be986af30>
+		HTTP_HOST: ask.12stu.com
+		wsgi.multithread: True
+		mod_wsgi.callable_object: application
+		REQUEST_URI: /questions/ask/
+		HTTP_ACCEPT: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+		wsgi.version: (1, 1)
+		GATEWAY_INTERFACE: CGI/1.1
+		wsgi.run_once: False
+		wsgi.errors: <mod_wsgi.Log object at 0x7f7be986ad30>
+		REMOTE_PORT: 61544
+		HTTP_ACCEPT_LANGUAGE: en-us,en;q=0.5
+		mod_wsgi.version: (3, 3)
+		CONTENT_TYPE: application/x-www-form-urlencoded
+		mod_wsgi.application_group: ask.12stu.com|
+		mod_wsgi.script_reloading: 1
+		wsgi.file_wrapper: <built-in method file_wrapper of mod_wsgi.Adapter object at 0x7f7be996d378>
+		HTTP_ACCEPT_ENCODING: gzip, deflate
+
+        COOKIES:
+        		__utmz: 88098187.1343724303.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)
+		Hm_lvt_069ed721d8a08e8f4402485c08b26ef6: 1343724302226,1343726512871
+		Hm_lvt_b56da2db038ef09edc1ad86641d19efc: 1343724487268
+		sessionid: 2250a0e6527518ef537cc148eb6ebc3e
+		Hm_lpvt_069ed721d8a08e8f4402485c08b26ef6: 1343728450203
+		__utma: 88098187.27869800.1343724303.1343724303.1343726513.2
+		__utmb: 88098187.32.9.1343728450396
+		__utmc: 88098187
+
+        EXCEPTION INFO:
+        		Traceback (most recent call last):
+		  File "/usr/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+		    response = callback(request, *callback_args, **callback_kwargs)
+		  File "/home/osqa/osqa-server/forum/modules/decorators.py", line 99, in decorated
+		    return decoratable(*args, **kwargs)
+		  File "/home/osqa/osqa-server/forum/modules/decorators.py", line 59, in __call__
+		    res = self._callable(*args, **kwargs)
+		  File "/home/osqa/osqa-server/forum/modules/decorators.py", line 34, in <lambda>
+		    self._callable = lambda *args, **kwargs: fn(origin, *args, **kwargs)
+		  File "/home/osqa/osqa-server/forum_modules/akismet/startup.py", line 45, in wrapper
+		    if api.comment_check(comment, data):
+		  File "/home/osqa/osqa-server/forum_modules/akismet/lib/akismet.py", line 320, in comment_check
+		    resp = self._safeRequest(url, urlencode(data), headers)
+		  File "/home/osqa/osqa-server/forum_modules/akismet/lib/akismet.py", line 137, in _safeRequest
+		    raise AkismetError(str(e))
+		AkismetError: <urlopen error [Errno -2] Name or service not known>
+		
+
+        
+/usr/lib/python2.7/dist-packages/django/core/handlers/base.py TIME: 2012-07-31 18:02:43,873 MSG: base.py:handle_uncaught_exception:209 Internal Server Error: /questions/related_questions/
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/django/core/handlers/base.py", line 105, in get_response
+    response = middleware_method(request, callback, callback_args, callback_kwargs)
+  File "/home/osqa/osqa-server/forum/middleware/cancel.py", line 6, in process_view
+    if 'cancel' in request.REQUEST:
+  File "/usr/lib/python2.7/dist-packages/django/core/handlers/wsgi.py", line 196, in _get_request
+    self._request = datastructures.MergeDict(self.POST, self.GET)
+  File "/usr/lib/python2.7/dist-packages/django/core/handlers/wsgi.py", line 210, in _get_post
+    self._load_post_and_files()
+  File "/usr/lib/python2.7/dist-packages/django/http/__init__.py", line 289, in _load_post_and_files
+    self._post, self._files = QueryDict(self.raw_post_data, encoding=self._encoding), MultiValueDict()
+  File "/usr/lib/python2.7/dist-packages/django/http/__init__.py", line 249, in _get_raw_post_data
+    self._raw_post_data = self.read(content_length)
+  File "/usr/lib/python2.7/dist-packages/django/http/__init__.py", line 301, in read
+    return self._stream.read(*args, **kwargs)
+IOError: request data read error
+/home/osqa/osqa-server/forum/views/meta.py TIME: 2012-07-31 18:02:43,943 MSG: meta.py:error_handler:200 
+        error executing request:
+        PATH: /questions/related_questions/
+        USER: <anonymous>
+        METHOD: POST
+        POST PARAMETERS:
+        None
+        GET PARAMETERS:
+        None
+        HTTP HEADERS:
+        		mod_wsgi.listener_port: 80
+		HTTP_REFERER: http://ask.12stu.com/questions/ask/
+		mod_wsgi.listener_host: 
+		SERVER_SOFTWARE: Apache/2.2.22 (Ubuntu)
+		SCRIPT_NAME: 
+		mod_wsgi.handler_script: 
+		SERVER_SIGNATURE: <address>Apache/2.2.22 (Ubuntu) Server at ask.12stu.com Port 80</address>
+
+		REQUEST_METHOD: POST
+		PATH_INFO: /questions/related_questions/
+		SERVER_PROTOCOL: HTTP/1.1
+		QUERY_STRING: 
+		CONTENT_LENGTH: 37
+		HTTP_USER_AGENT: Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)
+		HTTP_CONNECTION: Keep-Alive
+		HTTP_COOKIE: sessionid=3223f60e0f4f37d684f0a872a63df305; Hm_lvt_069ed721d8a08e8f4402485c08b26ef6=1343718856703,1343728924964; __utma=88098187.1694690922.1343718857.1343718857.1343728925.2; __utmb=88098187.2.10.1343728925; __utmz=88098187.1343718857.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); Hm_lpvt_069ed721d8a08e8f4402485c08b26ef6=1343728928592; __utmc=88098187
+		SERVER_NAME: ask.12stu.com
+		REMOTE_ADDR: 115.182.70.70
+		mod_wsgi.request_handler: wsgi-script
+		wsgi.url_scheme: http
+		PATH_TRANSLATED: /home/osqa/osqa-server/osqa.wsgi/questions/related_questions/
+		SERVER_PORT: 80
+		wsgi.multiprocess: False
+		mod_wsgi.input_chunked: 0
+		SERVER_ADDR: 113.11.199.172
+		DOCUMENT_ROOT: /home/osqa/osqa-server
+		mod_wsgi.process_group: OSQA
+		HTTP_X_REQUESTED_WITH: XMLHttpRequest
+		SCRIPT_FILENAME: /home/osqa/osqa-server/osqa.wsgi
+		SERVER_ADMIN: forum@example.com
+		wsgi.input: <mod_wsgi.Input object at 0x7f7be008f630>
+		HTTP_HOST: ask.12stu.com
+		wsgi.multithread: True
+		mod_wsgi.callable_object: application
+		HTTP_CACHE_CONTROL: no-cache
+		REQUEST_URI: /questions/related_questions/
+		HTTP_ACCEPT: application/json, text/javascript, */*
+		wsgi.version: (1, 1)
+		GATEWAY_INTERFACE: CGI/1.1
+		wsgi.run_once: False
+		wsgi.errors: <mod_wsgi.Log object at 0x7f7be008f730>
+		REMOTE_PORT: 61948
+		HTTP_ACCEPT_LANGUAGE: zh-cn
+		mod_wsgi.version: (3, 3)
+		CONTENT_TYPE: application/x-www-form-urlencoded
+		mod_wsgi.application_group: ask.12stu.com|
+		mod_wsgi.script_reloading: 1
+		wsgi.file_wrapper: <built-in method file_wrapper of mod_wsgi.Adapter object at 0x7f7be00973f0>
+		HTTP_ACCEPT_ENCODING: gzip, deflate
+
+        COOKIES:
+        		__utmz: 88098187.1343718857.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)
+		Hm_lvt_069ed721d8a08e8f4402485c08b26ef6: 1343718856703,1343728924964
+		sessionid: 3223f60e0f4f37d684f0a872a63df305
+		Hm_lpvt_069ed721d8a08e8f4402485c08b26ef6: 1343728928592
+		__utma: 88098187.1694690922.1343718857.1343718857.1343728925.2
+		__utmb: 88098187.2.10.1343728925
+		__utmc: 88098187
+
+        EXCEPTION INFO:
+        		Traceback (most recent call last):
+		  File "/usr/lib/python2.7/dist-packages/django/core/handlers/base.py", line 105, in get_response
+		    response = middleware_method(request, callback, callback_args, callback_kwargs)
+		  File "/home/osqa/osqa-server/forum/middleware/cancel.py", line 6, in process_view
+		    if 'cancel' in request.REQUEST:
+		  File "/usr/lib/python2.7/dist-packages/django/core/handlers/wsgi.py", line 196, in _get_request
+		    self._request = datastructures.MergeDict(self.POST, self.GET)
+		  File "/usr/lib/python2.7/dist-packages/django/core/handlers/wsgi.py", line 210, in _get_post
+		    self._load_post_and_files()
+		  File "/usr/lib/python2.7/dist-packages/django/http/__init__.py", line 289, in _load_post_and_files
+		    self._post, self._files = QueryDict(self.raw_post_data, encoding=self._encoding), MultiValueDict()
+		  File "/usr/lib/python2.7/dist-packages/django/http/__init__.py", line 249, in _get_raw_post_data
+		    self._raw_post_data = self.read(content_length)
+		  File "/usr/lib/python2.7/dist-packages/django/http/__init__.py", line 301, in read
+		    return self._stream.read(*args, **kwargs)
+		IOError: request data read error
+		
+
+        
+/home/osqa/osqa-server/forum/models/action.py TIME: 2012-07-31 18:03:40,141 MSG: action.py:trigger_hooks:195 Error in AskAction hook: 'unicode' object has no attribute '__nonzero__'
+/home/osqa/osqa-server/forum/models/action.py TIME: 2012-07-31 18:03:40,142 MSG: action.py:trigger_hooks:196 Traceback (most recent call last):
+  File "/home/osqa/osqa-server/forum/models/action.py", line 192, in trigger_hooks
+    hook(action=action, new=new)
+  File "/home/osqa/osqa-server/forum/subscriptions.py", line 37, in question_posted
+    subscribers = filter_subscribers(subscribers)
+  File "/home/osqa/osqa-server/forum/subscriptions.py", line 22, in filter_subscribers
+    if settings.DONT_NOTIFY_UNVALIDATED:
+  File "/home/osqa/osqa-server/forum/settings/base.py", line 22, in wrapper
+    return self.value.__getattribute__(name)(*args, **kwargs)
+AttributeError: 'unicode' object has no attribute '__nonzero__'
+
+/home/osqa/osqa-server/forum_modules/localauth/views.py TIME: 2012-08-01 22:27:15,455 MSG: views.py:register:17 {'username': u'haitao', 'password1': u'5646456', 'password2': u'5646456', 'password': u'5646456', 'next': 'http://ask.12stu.com'}
+/home/osqa/osqa-server/forum/models/action.py TIME: 2012-08-01 22:37:31,351 MSG: action.py:trigger_hooks:195 Error in AskAction hook: 'unicode' object has no attribute '__nonzero__'
+/home/osqa/osqa-server/forum/models/action.py TIME: 2012-08-01 22:37:31,352 MSG: action.py:trigger_hooks:196 Traceback (most recent call last):
+  File "/home/osqa/osqa-server/forum/models/action.py", line 192, in trigger_hooks
+    hook(action=action, new=new)
+  File "/home/osqa/osqa-server/forum/subscriptions.py", line 37, in question_posted
+    subscribers = filter_subscribers(subscribers)
+  File "/home/osqa/osqa-server/forum/subscriptions.py", line 22, in filter_subscribers
+    if settings.DONT_NOTIFY_UNVALIDATED:
+  File "/home/osqa/osqa-server/forum/settings/base.py", line 22, in wrapper
+    return self.value.__getattribute__(name)(*args, **kwargs)
+AttributeError: 'unicode' object has no attribute '__nonzero__'
+
+/home/osqa/osqa-server/forum/models/action.py TIME: 2012-08-01 22:38:02,483 MSG: action.py:trigger_hooks:195 Error in AnswerAction hook: 'unicode' object has no attribute '__nonzero__'
+/home/osqa/osqa-server/forum/models/action.py TIME: 2012-08-01 22:38:02,483 MSG: action.py:trigger_hooks:196 Traceback (most recent call last):
+  File "/home/osqa/osqa-server/forum/models/action.py", line 192, in trigger_hooks
+    hook(action=action, new=new)
+  File "/home/osqa/osqa-server/forum/subscriptions.py", line 66, in answer_posted
+    subscribers = filter_subscribers(subscribers)
+  File "/home/osqa/osqa-server/forum/subscriptions.py", line 22, in filter_subscribers
+    if settings.DONT_NOTIFY_UNVALIDATED:
+  File "/home/osqa/osqa-server/forum/settings/base.py", line 22, in wrapper
+    return self.value.__getattribute__(name)(*args, **kwargs)
+AttributeError: 'unicode' object has no attribute '__nonzero__'
+
+/home/osqa/osqa-server/forum/models/action.py TIME: 2012-08-01 22:38:36,024 MSG: action.py:trigger_hooks:195 Error in AnswerAction hook: 'unicode' object has no attribute '__nonzero__'
+/home/osqa/osqa-server/forum/models/action.py TIME: 2012-08-01 22:38:36,024 MSG: action.py:trigger_hooks:196 Traceback (most recent call last):
+  File "/home/osqa/osqa-server/forum/models/action.py", line 192, in trigger_hooks
+    hook(action=action, new=new)
+  File "/home/osqa/osqa-server/forum/subscriptions.py", line 66, in answer_posted
+    subscribers = filter_subscribers(subscribers)
+  File "/home/osqa/osqa-server/forum/subscriptions.py", line 22, in filter_subscribers
+    if settings.DONT_NOTIFY_UNVALIDATED:
+  File "/home/osqa/osqa-server/forum/settings/base.py", line 22, in wrapper
+    return self.value.__getattribute__(name)(*args, **kwargs)
+AttributeError: 'unicode' object has no attribute '__nonzero__'
+
+/home/osqa/osqa-server/forum/models/action.py TIME: 2012-08-01 22:40:29,639 MSG: action.py:trigger_hooks:195 Error in AskAction hook: 'unicode' object has no attribute '__nonzero__'
+/home/osqa/osqa-server/forum/models/action.py TIME: 2012-08-01 22:40:29,639 MSG: action.py:trigger_hooks:196 Traceback (most recent call last):
+  File "/home/osqa/osqa-server/forum/models/action.py", line 192, in trigger_hooks
+    hook(action=action, new=new)
+  File "/home/osqa/osqa-server/forum/subscriptions.py", line 37, in question_posted
+    subscribers = filter_subscribers(subscribers)
+  File "/home/osqa/osqa-server/forum/subscriptions.py", line 22, in filter_subscribers
+    if settings.DONT_NOTIFY_UNVALIDATED:
+  File "/home/osqa/osqa-server/forum/settings/base.py", line 22, in wrapper
+    return self.value.__getattribute__(name)(*args, **kwargs)
+AttributeError: 'unicode' object has no attribute '__nonzero__'
+
+/home/osqa/osqa-server/forum/models/action.py TIME: 2012-08-01 22:40:48,786 MSG: action.py:trigger_hooks:195 Error in AnswerAction hook: 'unicode' object has no attribute '__nonzero__'
+/home/osqa/osqa-server/forum/models/action.py TIME: 2012-08-01 22:40:48,786 MSG: action.py:trigger_hooks:196 Traceback (most recent call last):
+  File "/home/osqa/osqa-server/forum/models/action.py", line 192, in trigger_hooks
+    hook(action=action, new=new)
+  File "/home/osqa/osqa-server/forum/subscriptions.py", line 66, in answer_posted
+    subscribers = filter_subscribers(subscribers)
+  File "/home/osqa/osqa-server/forum/subscriptions.py", line 22, in filter_subscribers
+    if settings.DONT_NOTIFY_UNVALIDATED:
+  File "/home/osqa/osqa-server/forum/settings/base.py", line 22, in wrapper
+    return self.value.__getattribute__(name)(*args, **kwargs)
+AttributeError: 'unicode' object has no attribute '__nonzero__'
+
+/home/osqa/osqa-server/forum/models/action.py TIME: 2012-08-01 22:41:41,176 MSG: action.py:trigger_hooks:195 Error in AnswerAction hook: 'unicode' object has no attribute '__nonzero__'
+/home/osqa/osqa-server/forum/models/action.py TIME: 2012-08-01 22:41:41,176 MSG: action.py:trigger_hooks:196 Traceback (most recent call last):
+  File "/home/osqa/osqa-server/forum/models/action.py", line 192, in trigger_hooks
+    hook(action=action, new=new)
+  File "/home/osqa/osqa-server/forum/subscriptions.py", line 66, in answer_posted
+    subscribers = filter_subscribers(subscribers)
+  File "/home/osqa/osqa-server/forum/subscriptions.py", line 22, in filter_subscribers
+    if settings.DONT_NOTIFY_UNVALIDATED:
+  File "/home/osqa/osqa-server/forum/settings/base.py", line 22, in wrapper
+    return self.value.__getattribute__(name)(*args, **kwargs)
+AttributeError: 'unicode' object has no attribute '__nonzero__'
+
+/home/osqa/osqa-server/forum/models/node.py TIME: 2012-08-01 22:42:03,164 MSG: node.py:_as_markdown:34 Caught exception 'module' object has no attribute 'etree' in markdown parser rendering Answer 'module' object has no attribute 'etree':\s Traceback (most recent call last):
+  File "/home/osqa/osqa-server/forum/models/node.py", line 30, in _as_markdown
+    return mark_safe(sanitize_html(markdown.markdown(content, extensions=extensions)))
+  File "/usr/local/lib/python2.7/dist-packages/Markdown-2.2.0-py2.7.egg/markdown/__init__.py", line 401, in markdown
+    return md.convert(text)
+  File "/usr/local/lib/python2.7/dist-packages/Markdown-2.2.0-py2.7.egg/markdown/__init__.py", line 292, in convert
+    newRoot = treeprocessor.run(root)
+  File "/usr/local/lib/python2.7/dist-packages/Markdown-2.2.0-py2.7.egg/markdown/treeprocessors.py", line 289, in run
+    text), child)
+  File "/usr/local/lib/python2.7/dist-packages/Markdown-2.2.0-py2.7.egg/markdown/treeprocessors.py", line 110, in __handleInline
+    data, patternIndex, startIndex)
+  File "/usr/local/lib/python2.7/dist-packages/Markdown-2.2.0-py2.7.egg/markdown/treeprocessors.py", line 237, in __applyPattern
+    node = pattern.handleMatch(match)
+  File "/home/osqa/osqa-server/forum/markdownext/mdx_urlize.py", line 27, in handleMatch
+    el = markdown.etree.Element("a")
+AttributeError: 'module' object has no attribute 'etree'
+
+/home/osqa/osqa-server/forum/models/action.py TIME: 2012-08-01 22:42:03,258 MSG: action.py:trigger_hooks:195 Error in AnswerAction hook: 'unicode' object has no attribute '__nonzero__'
+/home/osqa/osqa-server/forum/models/action.py TIME: 2012-08-01 22:42:03,258 MSG: action.py:trigger_hooks:196 Traceback (most recent call last):
+  File "/home/osqa/osqa-server/forum/models/action.py", line 192, in trigger_hooks
+    hook(action=action, new=new)
+  File "/home/osqa/osqa-server/forum/subscriptions.py", line 66, in answer_posted
+    subscribers = filter_subscribers(subscribers)
+  File "/home/osqa/osqa-server/forum/subscriptions.py", line 22, in filter_subscribers
+    if settings.DONT_NOTIFY_UNVALIDATED:
+  File "/home/osqa/osqa-server/forum/settings/base.py", line 22, in wrapper
+    return self.value.__getattribute__(name)(*args, **kwargs)
+AttributeError: 'unicode' object has no attribute '__nonzero__'
+
+/usr/lib/python2.7/dist-packages/django/core/handlers/base.py TIME: 2012-08-01 22:42:35,370 MSG: base.py:handle_uncaught_exception:209 Internal Server Error: /questions/21/answer/
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/osqa/osqa-server/forum/modules/decorators.py", line 99, in decorated
+    return decoratable(*args, **kwargs)
+  File "/home/osqa/osqa-server/forum/modules/decorators.py", line 59, in __call__
+    res = self._callable(*args, **kwargs)
+  File "/home/osqa/osqa-server/forum/modules/decorators.py", line 34, in <lambda>
+    self._callable = lambda *args, **kwargs: fn(origin, *args, **kwargs)
+  File "/home/osqa/osqa-server/forum_modules/akismet/startup.py", line 45, in wrapper
+    if api.comment_check(comment, data):
+  File "/home/osqa/osqa-server/forum_modules/akismet/lib/akismet.py", line 320, in comment_check
+    resp = self._safeRequest(url, urlencode(data), headers)
+  File "/home/osqa/osqa-server/forum_modules/akismet/lib/akismet.py", line 137, in _safeRequest
+    raise AkismetError(str(e))
+AkismetError: timed out
+/home/osqa/osqa-server/forum/views/meta.py TIME: 2012-08-01 22:42:35,399 MSG: meta.py:error_handler:200 
+        error executing request:
+        PATH: /questions/21/answer/
+        USER: haitao (6)
+        METHOD: POST
+        POST PARAMETERS:
+        		text: 1、工作前的第一学历、实习经历、面试环节等会决定你的起点。
+2、虽说起点仅仅是起点，但这意味着你比别人站的已经高了一点点。
+3、学习要以工作为导向，工作要以以后生活为导向，生活要为更好的生活为导向。
+4、当你工作后，如果想利用工作外的时间充电学习，这是比较困难的事。因为工作后闲暇时间不多，你只会想用这闲暇的时间做些自己喜欢的事。（以充电为乐趣的狂人请无视此条）
+总结：大学时期考虑下以后想要从事的工作或者职业，并以此为导向开始有的放矢的朝着目标努力。
+个人观点，仅供参考。众说纷纭，听从你的内心。
+
+        GET PARAMETERS:
+        None
+        HTTP HEADERS:
+        		mod_wsgi.listener_port: 80
+		HTTP_COOKIE: Hm_lpvt_069ed721d8a08e8f4402485c08b26ef6=1343832093203; __utmc=88098187; sessionid=f8d9cec04c9e19ef03d4d1a357cf6b56; Hm_lvt_069ed721d8a08e8f4402485c08b26ef6=1343829746281,1343829943093,1343830090078,1343830101640; __utma=88098187.1325365252.1343829490.1343829490.1343829490.1; __utmb=88098187.27.10.1343829490; __utmz=88098187.1343829490.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)
+		mod_wsgi.listener_host: 
+		SERVER_SOFTWARE: Apache/2.2.22 (Ubuntu)
+		SCRIPT_NAME: 
+		mod_wsgi.handler_script: 
+		SERVER_SIGNATURE: <address>Apache/2.2.22 (Ubuntu) Server at ask.12stu.com Port 80</address>
+
+		REQUEST_METHOD: POST
+		PATH_INFO: /questions/21/answer/
+		SERVER_PROTOCOL: HTTP/1.1
+		QUERY_STRING: 
+		CONTENT_LENGTH: 2199
+		HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0; QQDownload 708; 360SE)
+		HTTP_CONNECTION: Keep-Alive
+		HTTP_REFERER: http://ask.12stu.com/questions/21/or?page=1#24
+		SERVER_NAME: ask.12stu.com
+		REMOTE_ADDR: 118.250.23.98
+		mod_wsgi.request_handler: wsgi-script
+		wsgi.url_scheme: http
+		PATH_TRANSLATED: /home/osqa/osqa-server/osqa.wsgi/questions/21/answer/
+		SERVER_PORT: 80
+		wsgi.multiprocess: False
+		mod_wsgi.input_chunked: 0
+		SERVER_ADDR: 113.11.199.172
+		DOCUMENT_ROOT: /home/osqa/osqa-server
+		mod_wsgi.process_group: OSQA
+		SCRIPT_FILENAME: /home/osqa/osqa-server/osqa.wsgi
+		SERVER_ADMIN: forum@example.com
+		wsgi.input: <mod_wsgi.Input object at 0x7fe7e00badf0>
+		HTTP_HOST: ask.12stu.com
+		wsgi.multithread: True
+		mod_wsgi.callable_object: application
+		HTTP_CACHE_CONTROL: no-cache
+		REQUEST_URI: /questions/21/answer/
+		HTTP_ACCEPT: image/gif, image/jpeg, image/pjpeg, image/pjpeg, application/x-shockwave-flash, application/vnd.ms-excel, application/vnd.ms-powerpoint, application/msword, application/QVOD, application/QVOD, */*
+		wsgi.version: (1, 1)
+		GATEWAY_INTERFACE: CGI/1.1
+		wsgi.run_once: False
+		wsgi.errors: <mod_wsgi.Log object at 0x7fe7e00babf0>
+		REMOTE_PORT: 6951
+		HTTP_ACCEPT_LANGUAGE: zh-cn
+		mod_wsgi.version: (3, 3)
+		CONTENT_TYPE: application/x-www-form-urlencoded
+		mod_wsgi.application_group: ask.12stu.com|
+		mod_wsgi.script_reloading: 1
+		wsgi.file_wrapper: <built-in method file_wrapper of mod_wsgi.Adapter object at 0x7fe7e985d4e0>
+		HTTP_ACCEPT_ENCODING: gzip, deflate
+
+        COOKIES:
+        		__utmz: 88098187.1343829490.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)
+		Hm_lvt_069ed721d8a08e8f4402485c08b26ef6: 1343829746281,1343829943093,1343830090078,1343830101640
+		sessionid: f8d9cec04c9e19ef03d4d1a357cf6b56
+		Hm_lpvt_069ed721d8a08e8f4402485c08b26ef6: 1343832093203
+		__utma: 88098187.1325365252.1343829490.1343829490.1343829490.1
+		__utmb: 88098187.27.10.1343829490
+		__utmc: 88098187
+
+        EXCEPTION INFO:
+        		Traceback (most recent call last):
+		  File "/usr/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+		    response = callback(request, *callback_args, **callback_kwargs)
+		  File "/home/osqa/osqa-server/forum/modules/decorators.py", line 99, in decorated
+		    return decoratable(*args, **kwargs)
+		  File "/home/osqa/osqa-server/forum/modules/decorators.py", line 59, in __call__
+		    res = self._callable(*args, **kwargs)
+		  File "/home/osqa/osqa-server/forum/modules/decorators.py", line 34, in <lambda>
+		    self._callable = lambda *args, **kwargs: fn(origin, *args, **kwargs)
+		  File "/home/osqa/osqa-server/forum_modules/akismet/startup.py", line 45, in wrapper
+		    if api.comment_check(comment, data):
+		  File "/home/osqa/osqa-server/forum_modules/akismet/lib/akismet.py", line 320, in comment_check
+		    resp = self._safeRequest(url, urlencode(data), headers)
+		  File "/home/osqa/osqa-server/forum_modules/akismet/lib/akismet.py", line 137, in _safeRequest
+		    raise AkismetError(str(e))
+		AkismetError: timed out
+		
+
+        
+/home/osqa/osqa-server/forum/models/action.py TIME: 2012-08-01 22:44:58,928 MSG: action.py:trigger_hooks:195 Error in AnswerAction hook: 'unicode' object has no attribute '__nonzero__'
+/home/osqa/osqa-server/forum/models/action.py TIME: 2012-08-01 22:44:58,928 MSG: action.py:trigger_hooks:196 Traceback (most recent call last):
+  File "/home/osqa/osqa-server/forum/models/action.py", line 192, in trigger_hooks
+    hook(action=action, new=new)
+  File "/home/osqa/osqa-server/forum/subscriptions.py", line 66, in answer_posted
+    subscribers = filter_subscribers(subscribers)
+  File "/home/osqa/osqa-server/forum/subscriptions.py", line 22, in filter_subscribers
+    if settings.DONT_NOTIFY_UNVALIDATED:
+  File "/home/osqa/osqa-server/forum/settings/base.py", line 22, in wrapper
+    return self.value.__getattribute__(name)(*args, **kwargs)
+AttributeError: 'unicode' object has no attribute '__nonzero__'
+
+/home/osqa/osqa-server/forum/models/action.py TIME: 2012-08-01 22:45:16,289 MSG: action.py:trigger_hooks:195 Error in AnswerAction hook: 'unicode' object has no attribute '__nonzero__'
+/home/osqa/osqa-server/forum/models/action.py TIME: 2012-08-01 22:45:16,289 MSG: action.py:trigger_hooks:196 Traceback (most recent call last):
+  File "/home/osqa/osqa-server/forum/models/action.py", line 192, in trigger_hooks
+    hook(action=action, new=new)
+  File "/home/osqa/osqa-server/forum/subscriptions.py", line 66, in answer_posted
+    subscribers = filter_subscribers(subscribers)
+  File "/home/osqa/osqa-server/forum/subscriptions.py", line 22, in filter_subscribers
+    if settings.DONT_NOTIFY_UNVALIDATED:
+  File "/home/osqa/osqa-server/forum/settings/base.py", line 22, in wrapper
+    return self.value.__getattribute__(name)(*args, **kwargs)
+AttributeError: 'unicode' object has no attribute '__nonzero__'
+
+/home/osqa/osqa-server/forum/models/node.py TIME: 2012-08-01 22:45:43,133 MSG: node.py:_as_markdown:34 Caught exception 'module' object has no attribute 'etree' in markdown parser rendering Answer 'module' object has no attribute 'etree':\s Traceback (most recent call last):
+  File "/home/osqa/osqa-server/forum/models/node.py", line 30, in _as_markdown
+    return mark_safe(sanitize_html(markdown.markdown(content, extensions=extensions)))
+  File "/usr/local/lib/python2.7/dist-packages/Markdown-2.2.0-py2.7.egg/markdown/__init__.py", line 401, in markdown
+    return md.convert(text)
+  File "/usr/local/lib/python2.7/dist-packages/Markdown-2.2.0-py2.7.egg/markdown/__init__.py", line 292, in convert
+    newRoot = treeprocessor.run(root)
+  File "/usr/local/lib/python2.7/dist-packages/Markdown-2.2.0-py2.7.egg/markdown/treeprocessors.py", line 289, in run
+    text), child)
+  File "/usr/local/lib/python2.7/dist-packages/Markdown-2.2.0-py2.7.egg/markdown/treeprocessors.py", line 110, in __handleInline
+    data, patternIndex, startIndex)
+  File "/usr/local/lib/python2.7/dist-packages/Markdown-2.2.0-py2.7.egg/markdown/treeprocessors.py", line 237, in __applyPattern
+    node = pattern.handleMatch(match)
+  File "/home/osqa/osqa-server/forum/markdownext/mdx_urlize.py", line 27, in handleMatch
+    el = markdown.etree.Element("a")
+AttributeError: 'module' object has no attribute 'etree'
+
+/home/osqa/osqa-server/forum/models/action.py TIME: 2012-08-01 22:45:43,236 MSG: action.py:trigger_hooks:195 Error in AnswerAction hook: 'unicode' object has no attribute '__nonzero__'
+/home/osqa/osqa-server/forum/models/action.py TIME: 2012-08-01 22:45:43,236 MSG: action.py:trigger_hooks:196 Traceback (most recent call last):
+  File "/home/osqa/osqa-server/forum/models/action.py", line 192, in trigger_hooks
+    hook(action=action, new=new)
+  File "/home/osqa/osqa-server/forum/subscriptions.py", line 66, in answer_posted
+    subscribers = filter_subscribers(subscribers)
+  File "/home/osqa/osqa-server/forum/subscriptions.py", line 22, in filter_subscribers
+    if settings.DONT_NOTIFY_UNVALIDATED:
+  File "/home/osqa/osqa-server/forum/settings/base.py", line 22, in wrapper
+    return self.value.__getattribute__(name)(*args, **kwargs)
+AttributeError: 'unicode' object has no attribute '__nonzero__'
+
+/home/osqa/osqa-server/forum/models/node.py TIME: 2012-08-01 22:46:04,267 MSG: node.py:_as_markdown:34 Caught exception 'module' object has no attribute 'etree' in markdown parser rendering Answer 'module' object has no attribute 'etree':\s Traceback (most recent call last):
+  File "/home/osqa/osqa-server/forum/models/node.py", line 30, in _as_markdown
+    return mark_safe(sanitize_html(markdown.markdown(content, extensions=extensions)))
+  File "/usr/local/lib/python2.7/dist-packages/Markdown-2.2.0-py2.7.egg/markdown/__init__.py", line 401, in markdown
+    return md.convert(text)
+  File "/usr/local/lib/python2.7/dist-packages/Markdown-2.2.0-py2.7.egg/markdown/__init__.py", line 292, in convert
+    newRoot = treeprocessor.run(root)
+  File "/usr/local/lib/python2.7/dist-packages/Markdown-2.2.0-py2.7.egg/markdown/treeprocessors.py", line 289, in run
+    text), child)
+  File "/usr/local/lib/python2.7/dist-packages/Markdown-2.2.0-py2.7.egg/markdown/treeprocessors.py", line 110, in __handleInline
+    data, patternIndex, startIndex)
+  File "/usr/local/lib/python2.7/dist-packages/Markdown-2.2.0-py2.7.egg/markdown/treeprocessors.py", line 237, in __applyPattern
+    node = pattern.handleMatch(match)
+  File "/home/osqa/osqa-server/forum/markdownext/mdx_urlize.py", line 27, in handleMatch
+    el = markdown.etree.Element("a")
+AttributeError: 'module' object has no attribute 'etree'
+
+/home/osqa/osqa-server/forum/models/action.py TIME: 2012-08-01 22:46:04,371 MSG: action.py:trigger_hooks:195 Error in AnswerAction hook: 'unicode' object has no attribute '__nonzero__'
+/home/osqa/osqa-server/forum/models/action.py TIME: 2012-08-01 22:46:04,372 MSG: action.py:trigger_hooks:196 Traceback (most recent call last):
+  File "/home/osqa/osqa-server/forum/models/action.py", line 192, in trigger_hooks
+    hook(action=action, new=new)
+  File "/home/osqa/osqa-server/forum/subscriptions.py", line 66, in answer_posted
+    subscribers = filter_subscribers(subscribers)
+  File "/home/osqa/osqa-server/forum/subscriptions.py", line 22, in filter_subscribers
+    if settings.DONT_NOTIFY_UNVALIDATED:
+  File "/home/osqa/osqa-server/forum/settings/base.py", line 22, in wrapper
+    return self.value.__getattribute__(name)(*args, **kwargs)
+AttributeError: 'unicode' object has no attribute '__nonzero__'
+
+/home/osqa/osqa-server/forum/models/action.py TIME: 2012-08-01 22:46:44,249 MSG: action.py:trigger_hooks:195 Error in AnswerAction hook: 'unicode' object has no attribute '__nonzero__'
+/home/osqa/osqa-server/forum/models/action.py TIME: 2012-08-01 22:46:44,249 MSG: action.py:trigger_hooks:196 Traceback (most recent call last):
+  File "/home/osqa/osqa-server/forum/models/action.py", line 192, in trigger_hooks
+    hook(action=action, new=new)
+  File "/home/osqa/osqa-server/forum/subscriptions.py", line 66, in answer_posted
+    subscribers = filter_subscribers(subscribers)
+  File "/home/osqa/osqa-server/forum/subscriptions.py", line 22, in filter_subscribers
+    if settings.DONT_NOTIFY_UNVALIDATED:
+  File "/home/osqa/osqa-server/forum/settings/base.py", line 22, in wrapper
+    return self.value.__getattribute__(name)(*args, **kwargs)
+AttributeError: 'unicode' object has no attribute '__nonzero__'
+
+/usr/lib/python2.7/dist-packages/django/core/handlers/base.py TIME: 2012-08-01 22:49:13,665 MSG: base.py:handle_uncaught_exception:209 Internal Server Error: /questions/21/answer/
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/django/core/handlers/base.py", line 105, in get_response
+    response = middleware_method(request, callback, callback_args, callback_kwargs)
+  File "/home/osqa/osqa-server/forum/middleware/cancel.py", line 6, in process_view
+    if 'cancel' in request.REQUEST:
+  File "/usr/lib/python2.7/dist-packages/django/core/handlers/wsgi.py", line 196, in _get_request
+    self._request = datastructures.MergeDict(self.POST, self.GET)
+  File "/usr/lib/python2.7/dist-packages/django/core/handlers/wsgi.py", line 210, in _get_post
+    self._load_post_and_files()
+  File "/usr/lib/python2.7/dist-packages/django/http/__init__.py", line 289, in _load_post_and_files
+    self._post, self._files = QueryDict(self.raw_post_data, encoding=self._encoding), MultiValueDict()
+  File "/usr/lib/python2.7/dist-packages/django/http/__init__.py", line 249, in _get_raw_post_data
+    self._raw_post_data = self.read(content_length)
+  File "/usr/lib/python2.7/dist-packages/django/http/__init__.py", line 301, in read
+    return self._stream.read(*args, **kwargs)
+IOError: request data read error
+/home/osqa/osqa-server/forum/views/meta.py TIME: 2012-08-01 22:49:13,685 MSG: meta.py:error_handler:200 
+        error executing request:
+        PATH: /questions/21/answer/
+        USER: haitao (6)
+        METHOD: POST
+        POST PARAMETERS:
+        None
+        GET PARAMETERS:
+        None
+        HTTP HEADERS:
+        		mod_wsgi.listener_port: 80
+		HTTP_COOKIE: Hm_lpvt_069ed721d8a08e8f4402485c08b26ef6=1343832371218; __utmc=88098187; sessionid=f8d9cec04c9e19ef03d4d1a357cf6b56; Hm_lvt_069ed721d8a08e8f4402485c08b26ef6=1343829746281,1343829943093,1343830090078,1343830101640; __utma=88098187.1325365252.1343829490.1343829490.1343829490.1; __utmb=88098187.34.10.1343829490; __utmz=88098187.1343829490.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)
+		mod_wsgi.listener_host: 
+		SERVER_SOFTWARE: Apache/2.2.22 (Ubuntu)
+		SCRIPT_NAME: 
+		mod_wsgi.handler_script: 
+		SERVER_SIGNATURE: <address>Apache/2.2.22 (Ubuntu) Server at ask.12stu.com Port 80</address>
+
+		REQUEST_METHOD: POST
+		PATH_INFO: /questions/21/answer/
+		SERVER_PROTOCOL: HTTP/1.1
+		QUERY_STRING: 
+		CONTENT_LENGTH: 1688
+		HTTP_USER_AGENT: Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0; QQDownload 708; 360SE)
+		HTTP_CONNECTION: Keep-Alive
+		HTTP_REFERER: http://ask.12stu.com/questions/21/or?page=1#29
+		SERVER_NAME: ask.12stu.com
+		REMOTE_ADDR: 118.250.23.98
+		mod_wsgi.request_handler: wsgi-script
+		wsgi.url_scheme: http
+		PATH_TRANSLATED: /home/osqa/osqa-server/osqa.wsgi/questions/21/answer/
+		SERVER_PORT: 80
+		wsgi.multiprocess: False
+		mod_wsgi.input_chunked: 0
+		SERVER_ADDR: 113.11.199.172
+		DOCUMENT_ROOT: /home/osqa/osqa-server
+		mod_wsgi.process_group: OSQA
+		SCRIPT_FILENAME: /home/osqa/osqa-server/osqa.wsgi
+		SERVER_ADMIN: forum@example.com
+		wsgi.input: <mod_wsgi.Input object at 0x7fe7e9917770>
+		HTTP_HOST: ask.12stu.com
+		wsgi.multithread: True
+		mod_wsgi.callable_object: application
+		HTTP_CACHE_CONTROL: no-cache
+		REQUEST_URI: /questions/21/answer/
+		HTTP_ACCEPT: image/gif, image/jpeg, image/pjpeg, image/pjpeg, application/x-shockwave-flash, application/vnd.ms-excel, application/vnd.ms-powerpoint, application/msword, application/QVOD, application/QVOD, */*
+		wsgi.version: (1, 1)
+		GATEWAY_INTERFACE: CGI/1.1
+		wsgi.run_once: False
+		wsgi.errors: <mod_wsgi.Log object at 0x7fe7e420f9f0>
+		REMOTE_PORT: 7028
+		HTTP_ACCEPT_LANGUAGE: zh-cn
+		mod_wsgi.version: (3, 3)
+		CONTENT_TYPE: application/x-www-form-urlencoded
+		mod_wsgi.application_group: ask.12stu.com|
+		mod_wsgi.script_reloading: 1
+		wsgi.file_wrapper: <built-in method file_wrapper of mod_wsgi.Adapter object at 0x7fe7e41f5300>
+		HTTP_ACCEPT_ENCODING: gzip, deflate
+
+        COOKIES:
+        		__utmz: 88098187.1343829490.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)
+		Hm_lvt_069ed721d8a08e8f4402485c08b26ef6: 1343829746281,1343829943093,1343830090078,1343830101640
+		sessionid: f8d9cec04c9e19ef03d4d1a357cf6b56
+		Hm_lpvt_069ed721d8a08e8f4402485c08b26ef6: 1343832371218
+		__utma: 88098187.1325365252.1343829490.1343829490.1343829490.1
+		__utmb: 88098187.34.10.1343829490
+		__utmc: 88098187
+
+        EXCEPTION INFO:
+        		Traceback (most recent call last):
+		  File "/usr/lib/python2.7/dist-packages/django/core/handlers/base.py", line 105, in get_response
+		    response = middleware_method(request, callback, callback_args, callback_kwargs)
+		  File "/home/osqa/osqa-server/forum/middleware/cancel.py", line 6, in process_view
+		    if 'cancel' in request.REQUEST:
+		  File "/usr/lib/python2.7/dist-packages/django/core/handlers/wsgi.py", line 196, in _get_request
+		    self._request = datastructures.MergeDict(self.POST, self.GET)
+		  File "/usr/lib/python2.7/dist-packages/django/core/handlers/wsgi.py", line 210, in _get_post
+		    self._load_post_and_files()
+		  File "/usr/lib/python2.7/dist-packages/django/http/__init__.py", line 289, in _load_post_and_files
+		    self._post, self._files = QueryDict(self.raw_post_data, encoding=self._encoding), MultiValueDict()
+		  File "/usr/lib/python2.7/dist-packages/django/http/__init__.py", line 249, in _get_raw_post_data
+		    self._raw_post_data = self.read(content_length)
+		  File "/usr/lib/python2.7/dist-packages/django/http/__init__.py", line 301, in read
+		    return self._stream.read(*args, **kwargs)
+		IOError: request data read error
+		
+
+        
+/home/osqa/osqa-server/forum/models/action.py TIME: 2012-08-01 22:53:28,555 MSG: action.py:trigger_hooks:195 Error in AnswerAction hook: 'unicode' object has no attribute '__nonzero__'
+/home/osqa/osqa-server/forum/models/action.py TIME: 2012-08-01 22:53:28,555 MSG: action.py:trigger_hooks:196 Traceback (most recent call last):
+  File "/home/osqa/osqa-server/forum/models/action.py", line 192, in trigger_hooks
+    hook(action=action, new=new)
+  File "/home/osqa/osqa-server/forum/subscriptions.py", line 66, in answer_posted
+    subscribers = filter_subscribers(subscribers)
+  File "/home/osqa/osqa-server/forum/subscriptions.py", line 22, in filter_subscribers
+    if settings.DONT_NOTIFY_UNVALIDATED:
+  File "/home/osqa/osqa-server/forum/settings/base.py", line 22, in wrapper
+    return self.value.__getattribute__(name)(*args, **kwargs)
+AttributeError: 'unicode' object has no attribute '__nonzero__'
+
